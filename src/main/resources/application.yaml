@@ -1,0 +1,20 @@
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cjblog?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: gnn2020318
+
+  jpa:
+    hibernate:
+      ddl-auto: update # 实体类确定下来之后改成none，不更新表
+    show-sql: true
+
+logging:
+  level:
+    root: info
+    com.coiggahou: debug
+server:
+  port: 9000
+
