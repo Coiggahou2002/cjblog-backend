@@ -16,6 +16,9 @@ public class Blog {
 
     private Long id;
     private String title;
+    private String subtitle;
+    private String digest;
+    private String author;
     private String content;
     private String bannerPicture;
     private String flag;
@@ -27,6 +30,7 @@ public class Blog {
     private Boolean isRecommended;
     private Date createTime;
     private Date updateTime;
+
 
     private Type type;
 

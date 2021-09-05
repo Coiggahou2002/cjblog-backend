@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.coiggahou.blog.mapper.TagMapper">
+
+
+    <select id="selectTopByLimit" resultType="com.coiggahou.blog.entity.blog.Tag">
+        select t_tags.name
+        from (select tags_id, count(*) as count
+              from t_blogs_tags
+              group by tags_id
+              order by count desc limit #{limit}) temp, t_tags
+        where temp.tags_id = t_tags.id
+    </select>
+
+
+
+</mapper>
