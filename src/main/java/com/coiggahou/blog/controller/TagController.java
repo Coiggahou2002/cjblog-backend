@@ -21,4 +21,10 @@ public class TagController {
     List<Tag> getTopTagsByLimit(@RequestParam Integer limit) {
         return tagService.getTopTagsByLimit(limit);
     }
+
+    @GetMapping("/get_all_tag_names")
+    @ResponseBody
+    List<String> getAllTagNames() {
+        return tagService.getAllTagNames();
+    }
 }

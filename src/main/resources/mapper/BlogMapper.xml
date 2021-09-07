@@ -49,9 +49,12 @@
     </select>
 
 
-    <insert id="insertNewBlog">
-        INSERT INTO t_blogs(banner_picture, title, subtitle, author, is_published, content)
-        VALUES (#{blog.bannerPicture}, #{blog.title}, #{blog.subtitle}, #{blog.author}, #{blog.isPublished}, #{blog.content})
+    <insert id="insertNewBlogWithoutTags" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        INSERT INTO t_blogs(banner_picture, title, subtitle, author, is_published, content, create_time, appreciation_on, comment_on)
+        VALUES (#{blog.bannerPicture}, #{blog.title}, #{blog.subtitle}, #{blog.author}, #{blog.isPublished}, #{blog.content}, #{blog.createTime}, #{blog.appreciationOn}, #{blog.commentOn})
+    </insert>
+    <insert id="insertTagForNewBlog">
+        INSERT INTO t_blogs_tags (blogs_id, tags_id) VALUES (#{blog.id}, #{tag.id})
     </insert>
 
 

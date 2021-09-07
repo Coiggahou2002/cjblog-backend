@@ -17,4 +17,9 @@ public class TagServiceImpl implements TagService{
     public List<Tag> getTopTagsByLimit(Integer limit) {
         return tagMapper.selectTopByLimit(limit);
     }
+
+    @Override
+    public List<String> getAllTagNames() {
+        return tagMapper.selectAllTagNames();
+    }
 }

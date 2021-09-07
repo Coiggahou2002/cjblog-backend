@@ -12,6 +12,18 @@
         where temp.tags_id = t_tags.id
     </select>
 
+    <select id="selectAllTagNames" resultType="String">
+        select name from t_tags
+    </select>
 
+    <select id="selectByNames" resultType="com.coiggahou.blog.entity.blog.Tag">
+        select * from t_tags where name in
+        <foreach collection="tags" item="tag" open="(" close=")" separator=",">#{tag.name}</foreach>
+    </select>
+
+<!--    <insert id="insertTagsForNewBlog">-->
+<!--        insert into t_blogs_tags (blogs_id, tags_id) values-->
+<!--        <foreach collection="list" item="tag_id">(#{blog_id}, #{tag_id})</foreach>-->
+<!--    </insert>-->
 
 </mapper>

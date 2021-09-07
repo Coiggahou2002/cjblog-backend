@@ -1,6 +1,7 @@
 package com.coiggahou.blog.mapper;
 
 import com.coiggahou.blog.entity.blog.Blog;
+import com.coiggahou.blog.entity.blog.Tag;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
@@ -16,5 +17,7 @@ public interface BlogMapper {
 
     Blog selectContentById(@Param("blog_id") Long id);
 
-    Boolean insertNewBlog(@Param("blog") Blog blog);
+    Boolean insertNewBlogWithoutTags(@Param("blog") Blog blog);
+
+    Boolean insertTagForNewBlog(@Param("blog") Blog blog, @Param("tag") Tag tag);
 }

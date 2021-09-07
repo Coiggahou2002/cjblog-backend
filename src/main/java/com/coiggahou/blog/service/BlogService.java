@@ -1,6 +1,7 @@
 package com.coiggahou.blog.service;
 
 import com.coiggahou.blog.entity.blog.Blog;
+import com.coiggahou.blog.entity.blog.Tag;
 
 import java.util.List;
 
